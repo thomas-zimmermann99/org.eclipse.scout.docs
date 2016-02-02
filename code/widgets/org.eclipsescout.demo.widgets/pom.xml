@@ -23,7 +23,7 @@
 
   <properties>
     <jdk.source.version>1.7</jdk.source.version>
-    <scout.version>5.2.0-SNAPSHOT</scout.version>
+    <scout.version>5.2.0.M5</scout.version>
   </properties>
 
   <groupId>org.eclipsescout.demo.widgets</groupId>
