@@ -6,7 +6,8 @@
 * Released under the Eclipse Public License v1.0
 * http://www.eclipse.org/legal/epl-v10.html
 */
-(function(scout, $, undefined) {
-  __include("heatmap/HeatmapField.js");
-  __include("heatmap/HeatmapFieldLayout.js");
-}(scout, jQuery));
+declare var __include: any;
+module scout {
+    __include("heatmap/HeatmapField.js");
+    __include("heatmap/HeatmapFieldLayout.js");
+}
