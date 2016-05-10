@@ -1,6 +1,6 @@
 
 
-namespace scout {
+module scout {
     //    "use strict";
 
     export declare class FormField {
@@ -24,7 +24,7 @@ namespace scout {
         private session: any;
 
         /** This is a description of the foo function. */
-        _render($parent) {
+        private _render($parent) {
             this.addContainer($parent, 'heatmap-field');
             this.addLabel();
             this.addStatus();
@@ -70,7 +70,7 @@ namespace scout {
             this._heatLayer = null;
         };
 
-        _handleViewParameterChanged() {
+        private _handleViewParameterChanged() {
             this._send('viewParameterChanged', {
                 center: {
                     x: this.heatmap.getCenter().lat,
@@ -80,7 +80,7 @@ namespace scout {
             });
         };
 
-        _handleClicked(event) {
+        private _handleClicked(event) {
             this._send('clicked', {
                 point: {
                     x: event.latlng.lat,
@@ -89,11 +89,11 @@ namespace scout {
             });
         };
 
-        _renderViewParameter() {
+        private _renderViewParameter() {
             this.heatmap.setView([this.viewParameter.center.x, this.viewParameter.center.y], this.viewParameter.zoomFactor);
         };
 
-        _renderHeatPointList() {
+        private _renderHeatPointList() {
             if (this._heatLayer) {
                 this.heatmap.removeLayer(this._heatLayer);
             }
@@ -107,7 +107,7 @@ namespace scout {
             this._heatLayer.addTo(this.heatmap);
         };
 
-        _onHeatPointsAdded(points) {
+        private _onHeatPointsAdded(points) {
             var i: number;
             if (this._heatLayer) {
                 for (i = 0; i < points.length; i++) {
