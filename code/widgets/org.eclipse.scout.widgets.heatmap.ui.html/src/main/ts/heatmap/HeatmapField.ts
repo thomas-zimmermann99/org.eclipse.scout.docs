@@ -1,6 +1,6 @@
-declare var L: any;
 
-module scout {
+
+namespace scout {
     //    "use strict";
 
     export declare class FormField {
@@ -45,6 +45,7 @@ module scout {
             this.heatmap = L.map(heatmapId, {
                 trackResize: false
             });
+
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
             }).addTo(this.heatmap);
@@ -96,7 +97,8 @@ module scout {
             if (this._heatLayer) {
                 this.heatmap.removeLayer(this._heatLayer);
             }
-            this._heatLayer = L.heatLayer(this.heatPointList,
+
+            this._heatLayer = (< any > L).heatLayer(this.heatPointList, //FIXME TYPING: leaflet-heat does not exist
                 // TODO make this parameter list configurable from the model!
                 // parameters to control the appearance of heat points
                 // see leaflet.heat docu for full spec
