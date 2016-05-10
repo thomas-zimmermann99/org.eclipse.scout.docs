@@ -16,10 +16,10 @@ module scout {
     };
 
     export class HeatmapField extends scout.FormField {
-        public heatmap: any;
-        private _heatLayer: any;
+        public heatmap: L.Map;
+        private _heatLayer: L.HeatLayer;
         private viewParameter: any;
-        private heatPointList: any;
+        private heatPointList: number[][];
         private $container: any;
         private session: any;
 
@@ -42,6 +42,7 @@ module scout {
             var fieldHtmlComp = new (<any>scout).HtmlComponent($field, this.session);
             fieldHtmlComp.setLayout(new HeatmapFieldLayout(this));
 
+            //DEMO 1.0 map definition
             this.heatmap = L.map(heatmapId, {
                 trackResize: false
             });
@@ -98,7 +99,13 @@ module scout {
                 this.heatmap.removeLayer(this._heatLayer);
             }
 
-            this._heatLayer = (< any > L).heatLayer(this.heatPointList, //FIXME TYPING: leaflet-heat does not exist
+            //DEMO 1.1 Typings: leaflet-heat does not have a typings file:
+            //Quickfix. anycast
+            //or update d.ts file using source https://github.com/Leaflet/Leaflet.heat/blob/gh-pages/src/HeatLayer.js
+            //options: code completion, but not enforced: all options are optional
+            //works even, if the typings are wrong
+            //show compiled result
+            this._heatLayer = L.heatLayer(this.heatPointList, 
                 // TODO make this parameter list configurable from the model!
                 // parameters to control the appearance of heat points
                 // see leaflet.heat docu for full spec
@@ -107,7 +114,8 @@ module scout {
             this._heatLayer.addTo(this.heatmap);
         };
 
-        private _onHeatPointsAdded(points) {
+
+        private _onHeatPointsAdded(points: number[][]) {
             var i: number;
             if (this._heatLayer) {
                 for (i = 0; i < points.length; i++) {

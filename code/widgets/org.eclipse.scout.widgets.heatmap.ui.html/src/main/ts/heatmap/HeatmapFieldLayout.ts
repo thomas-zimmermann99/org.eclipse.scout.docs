@@ -22,7 +22,7 @@ module scout {
                 (<any>scout).graphics.setSize($container, size);
             }
 
-            this.field.heatmap.invalidateSize();
+            this.field.heatmap.invalidateSize(false);//TODO missing parameter
         }
 
     }
