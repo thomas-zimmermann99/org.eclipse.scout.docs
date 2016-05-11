@@ -1,5 +1,3 @@
-
-
 module scout {
     //    "use strict";
 
@@ -113,7 +111,6 @@ module scout {
                 );
             this._heatLayer.addTo(this.heatmap);
         };
-
 
         private _onHeatPointsAdded(points: number[][]) {
             var i: number;
