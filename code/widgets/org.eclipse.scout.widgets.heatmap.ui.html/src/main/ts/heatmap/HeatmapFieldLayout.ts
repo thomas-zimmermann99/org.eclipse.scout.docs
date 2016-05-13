@@ -1,5 +1,5 @@
 
-module scout {
+namespace scout {
 
     export declare class AbstractLayout { };
 

@@ -6,7 +6,7 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare namespace L {
-    type LatLngExpression = LatLng | number[] | ({ lat: number; lng: number })
+    type LatLngExpression = LatLng | number[]| ({ lat: number; lng: number })
     type LatLngBoundsExpression = LatLngBounds | LatLngExpression[];
 }
 
@@ -48,12 +48,12 @@ declare namespace L {
           * Creates a Bounds object from two coordinates (usually top-left and bottom-right
           * corners).
           */
-        new(topLeft: Point, bottomRight: Point): Bounds;
+        new (topLeft: Point, bottomRight: Point): Bounds;
 
         /**
           * Creates a Bounds object defined by the points it contains.
           */
-        new(points: Point[]): Bounds;
+        new (points: Point[]): Bounds;
     }
     export var Bounds: BoundsStatic;
 
@@ -193,7 +193,7 @@ declare namespace L {
           * Instantiates a circle object given a geographical point, a radius in meters
           * and optionally an options object.
           */
-        new(latlng: LatLngExpression, radius: number, options?: PathOptions): Circle;
+        new (latlng: LatLngExpression, radius: number, options?: PathOptions): Circle;
     }
     export var Circle: CircleStatic;
 
@@ -242,7 +242,7 @@ declare namespace L {
           * an options object. The default radius is 10 and can be altered by passing a
           * "radius" member in the path options object.
           */
-        new(latlng: LatLngExpression, options?: PathOptions): CircleMarker;
+        new (latlng: LatLngExpression, options?: PathOptions): CircleMarker;
     }
     export var CircleMarker: CircleMarkerStatic;
 
@@ -303,7 +303,7 @@ declare namespace L {
           * same method on any class to inherit from it.
           */
         extend(options: ClassExtendOptions): any;
-        extend<Options, NewClass>(options: ClassExtendOptions): { new(options?: Options): NewClass };
+        extend<Options, NewClass>(options: ClassExtendOptions): { new (options?: Options): NewClass };
 
         /**
           * You can also use the following shortcut when you just need to make
@@ -332,7 +332,7 @@ declare namespace L {
         /**
           * Creates a control with the given options.
           */
-        new(options?: ControlOptions): Control;
+        new (options?: ControlOptions): Control;
 
         Zoom: Control.ZoomStatic;
         Attribution: Control.AttributionStatic;
@@ -437,7 +437,7 @@ declare namespace L {
             /**
               * Creates an attribution control.
               */
-            new(options?: AttributionOptions): Attribution;
+            new (options?: AttributionOptions): Attribution;
         }
 
         export interface Attribution extends L.Control {
@@ -463,7 +463,7 @@ declare namespace L {
               * Creates an attribution control with the given layers. Base layers will be
               * switched with radio buttons, while overlays will be switched with checkboxes.
               */
-            new(baseLayers?: any, overlays?: any, options?: LayersOptions): Layers;
+            new (baseLayers?: any, overlays?: any, options?: LayersOptions): Layers;
         }
 
         export interface Layers extends L.Control, IEventPowered<Layers> {
@@ -504,7 +504,7 @@ declare namespace L {
             /**
               * Creates an scale control with the given options.
               */
-            new(options?: ScaleOptions): Scale;
+            new (options?: ScaleOptions): Scale;
         }
 
         export interface Scale extends L.Control {
@@ -600,7 +600,7 @@ declare namespace L {
         /**
           * Creates a div icon instance with the given options.
           */
-        new(options: DivIconOptions): DivIcon;
+        new (options: DivIconOptions): DivIcon;
     }
     export var DivIcon: DivIconStatic;
 
@@ -812,7 +812,7 @@ declare namespace L {
           * Creates a Draggable object for moving the given element when you start dragging
           * the dragHandle element (equals the element itself by default).
           */
-        new(element: HTMLElement, dragHandle?: HTMLElement): Draggable;
+        new (element: HTMLElement, dragHandle?: HTMLElement): Draggable;
     }
     export var Draggable: DraggableStatic;
 
@@ -861,7 +861,7 @@ declare namespace L {
         /**
           * Create a layer group, optionally given an initial set of layers.
           */
-        new<T extends ILayer>(layers?: T[]): FeatureGroup<T>;
+        new <T extends ILayer>(layers?: T[]): FeatureGroup<T>;
     }
     export var FeatureGroup: FeatureGroupStatic;
 
@@ -942,7 +942,7 @@ declare namespace L {
           * to display on the map (you can alternatively add it later with addData method)
           * and an options object.
           */
-        new(geojson?: any, options?: GeoJSONOptions): GeoJSON;
+        new (geojson?: any, options?: GeoJSONOptions): GeoJSON;
 
         /**
           * Creates a layer from a given GeoJSON feature.
@@ -1038,13 +1038,13 @@ declare namespace L {
         /**
           * Creates an icon instance with the given options.
           */
-        new(options: IconOptions): Icon;
+        new (options: IconOptions): Icon;
 
         Default: {
             /**
               * Creates a default icon instance with the given options.
               */
-            new(options?: IconOptions): Icon.Default;
+            new (options?: IconOptions): Icon.Default;
 
             imagePath: string;
         };
@@ -1347,7 +1347,7 @@ declare namespace L {
           * Instantiates an image overlay object given the URL of the image and the geographical
           * bounds it is tied to.
           */
-        new(imageUrl: string, bounds: LatLngBounds, options?: ImageOverlayOptions): ImageOverlay;
+        new (imageUrl: string, bounds: LatLngBounds, options?: ImageOverlayOptions): ImageOverlay;
     }
     export var ImageOverlay: ImageOverlayStatic;
 
@@ -1453,13 +1453,13 @@ declare namespace L {
           * Creates an object representing a geographical point with the given latitude
           * and longitude.
           */
-        new(latitude: number, longitude: number): LatLng;
+        new (latitude: number, longitude: number): LatLng;
 
         /**
           * Creates an object representing a geographical point with the given latitude
           * and longitude.
           */
-        new(coords: LatLngExpression): LatLng;
+        new (coords: LatLngExpression): LatLng;
 
         /**
           * A multiplier for converting degrees into radians.
@@ -1539,13 +1539,13 @@ declare namespace L {
           * Creates a LatLngBounds object by defining south-west and north-east corners
           * of the rectangle.
           */
-        new(southWest: LatLngExpression, northEast: LatLngExpression): LatLngBounds;
+        new (southWest: LatLngExpression, northEast: LatLngExpression): LatLngBounds;
 
         /**
           * Creates a LatLngBounds object defined by the geographical points it contains.
           * Very useful for zooming the map to fit a particular set of locations with fitBounds.
           */
-        new(latlngs: LatLngBoundsExpression): LatLngBounds;
+        new (latlngs: LatLngBoundsExpression): LatLngBounds;
     }
     export var LatLngBounds: LatLngBoundsStatic;
 
@@ -1580,25 +1580,25 @@ declare namespace L {
           */
         getSouthEast(): LatLng;
 
-      	/**
-          * Returns the west longitude in degrees of the bounds.
-          */
-	getWest(): number;
+        /**
+      * Returns the west longitude in degrees of the bounds.
+      */
+        getWest(): number;
 
         /**
           * Returns the east longitude in degrees of the bounds.
           */
-	getEast(): number;
+        getEast(): number;
 
         /**
           * Returns the north latitude in degrees of the bounds.
           */
-	getNorth(): number;
+        getNorth(): number;
 
         /**
           * Returns the south latitude in degrees of the bounds.
           */
-	getSouth(): number;
+        getSouth(): number;
 
         /**
           * Returns the center point of the bounds.
@@ -1658,7 +1658,7 @@ declare namespace L {
         /**
           * Create a layer group, optionally given an initial set of layers.
           */
-        new<T extends ILayer>(layers?: T[]): LayerGroup<T>;
+        new <T extends ILayer>(layers?: T[]): LayerGroup<T>;
     }
     export var LayerGroup: LayerGroupStatic;
 
@@ -2006,7 +2006,7 @@ declare namespace L {
           * polyline points that are on the screen or near, increasing performance. Returns
           * either false or a length-2 array of clipped points.
           */
-        export function clipSegment(a: Point, b: Point, bounds: Bounds): Point[] | boolean;
+        export function clipSegment(a: Point, b: Point, bounds: Bounds): Point[]| boolean;
 
     }
 }
@@ -2086,7 +2086,7 @@ declare namespace L {
           *
           * @constructor
           */
-        new(id: HTMLElement, options?: Map.MapOptions): Map;
+        new (id: HTMLElement, options?: Map.MapOptions): Map;
 
         /**
           * Instantiates a map object given a div element id and optionally an
@@ -2094,7 +2094,7 @@ declare namespace L {
           *
           * @constructor
           */
-        new(id: string, options?: Map.MapOptions): Map;
+        new (id: string, options?: Map.MapOptions): Map;
     }
     export var Map: MapStatic;
 
@@ -2452,7 +2452,7 @@ declare namespace L {
         on(type: string, fn: (e: LeafletEvent) => void, context?: any): Map;
         once(type: string, fn: (e: LeafletEvent) => void, context?: any): Map;
         off(type: string, fn?: (e: LeafletEvent) => void, context?: any): Map;
-        fire(type: string, data?: any): Map;addEventListener(eventMap: any, context?: any): Map;
+        fire(type: string, data?: any): Map; addEventListener(eventMap: any, context?: any): Map;
         removeEventListener(eventMap?: any, context?: any): Map;
         clearAllEventListeners(): Map;
         on(eventMap: any, context?: any): Map;
@@ -2827,7 +2827,7 @@ declare namespace L {
           * Instantiates a Marker object given a geographical point and optionally
           * an options object.
           */
-        new(latlng: LatLngExpression, options?: MarkerOptions): Marker;
+        new (latlng: LatLngExpression, options?: MarkerOptions): Marker;
     };
 
     export interface Marker extends ILayer, IEventPowered<Marker> {
@@ -3059,7 +3059,7 @@ declare namespace L {
           * for each individual polygon) and optionally an options object (the same
           * as for MultiPolyline).
           */
-        new(latlngs: LatLng[][], options?: PolylineOptions): MultiPolygon;
+        new (latlngs: LatLng[][], options?: PolylineOptions): MultiPolygon;
     }
     export var MultiPolygon: MultiPolygonStatic;
 
@@ -3100,7 +3100,7 @@ declare namespace L {
           * Instantiates a multi-polyline object given an array of arrays of geographical
           * points (one for each individual polyline) and optionally an options object.
           */
-        new(latlngs: LatLng[][], options?: PolylineOptions): MultiPolyline;
+        new (latlngs: LatLng[][], options?: PolylineOptions): MultiPolyline;
     }
     export var MultiPolyline: MultiPolylineStatic;
 
@@ -3385,10 +3385,10 @@ declare namespace L {
           */
         className?: string;
 
-	/**
-	 * Sets the radius of a circle marker. 
-	 */
-	radius?: number;
+        /**
+         * Sets the radius of a circle marker. 
+         */
+        radius?: number;
 
     }
 }
@@ -3406,7 +3406,7 @@ declare namespace L {
           * Creates a Point object with the given x and y coordinates. If optional round
           * is set to true, rounds the x and y values.
           */
-        new(x: number, y: number, round?: boolean): Point;
+        new (x: number, y: number, round?: boolean): Point;
     }
     export var Point: PointStatic;
 
@@ -3489,7 +3489,7 @@ declare namespace L {
           * latlngs array representing the exterior ring while the remaining represent
           * the holes inside.
           */
-        new(latlngs: LatLngBoundsExpression, options?: PolylineOptions): Polygon;
+        new (latlngs: LatLngBoundsExpression, options?: PolylineOptions): Polygon;
     }
     export var Polygon: PolygonStatic;
 
@@ -3510,7 +3510,7 @@ declare namespace L {
           * Instantiates a polyline object given an array of geographical points and
           * optionally an options object.
           */
-        new(latlngs: LatLngBoundsExpression, options?: PolylineOptions): Polyline;
+        new (latlngs: LatLngBoundsExpression, options?: PolylineOptions): Polyline;
     }
     export var Polyline: PolylineStatic;
 
@@ -3599,7 +3599,7 @@ declare namespace L {
           * its appearance and location and an optional object that is used to tag the
           * popup with a reference to the source object to which it refers.
           */
-        new(options?: PopupOptions, source?: any): Popup;
+        new (options?: PopupOptions, source?: any): Popup;
     }
     export var Popup: PopupStatic;
 
@@ -3767,7 +3767,7 @@ declare namespace L {
         /**
           * Creates a PosAnimation object.
           */
-        new(): PosAnimation;
+        new (): PosAnimation;
     }
     export var PosAnimation: PosAnimationStatic;
 
@@ -3839,7 +3839,7 @@ declare namespace L {
           * Instantiates a rectangle object with the given geographical bounds and
           * optionally an options object.
           */
-        new(bounds: LatLngBounds, options?: PathOptions): Rectangle;
+        new (bounds: LatLngBounds, options?: PathOptions): Rectangle;
     }
     export var Rectangle: RectangleStatic;
 
@@ -3897,21 +3897,21 @@ declare namespace L {
           * Instantiates a tile layer object given a URL template and optionally an options
           * object.
           */
-        new(urlTemplate: string, options?: TileLayerOptions): TileLayer;
+        new (urlTemplate: string, options?: TileLayerOptions): TileLayer;
 
         WMS: {
             /**
               * Instantiates a WMS tile layer object given a base URL of the WMS service and
               * a WMS parameters/options object.
               */
-            new(baseUrl: string, options: WMSOptions): TileLayer.WMS;
+            new (baseUrl: string, options: WMSOptions): TileLayer.WMS;
         };
 
         Canvas: {
             /**
               * Instantiates a Canvas tile layer object given an options object (optionally).
               */
-            new(options?: TileLayerOptions): TileLayer.Canvas;
+            new (options?: TileLayerOptions): TileLayer.Canvas;
         };
     }
     export var TileLayer: TileLayerStatic;
@@ -4195,7 +4195,7 @@ declare namespace L {
         /**
           * Creates a transformation object with the given coefficients.
           */
-        new(a: number, b: number, c: number, d: number): Transformation;
+        new (a: number, b: number, c: number, d: number): Transformation;
     }
     export var Transformation: TransformationStatic;
 
@@ -4357,7 +4357,7 @@ declare var L_NO_TOUCH: boolean;
 declare var L_DISABLE_3D: boolean;
 
 declare module "leaflet" {
-	export = L;
+    export = L;
 }
 
 // vim: et ts=4 sw=4

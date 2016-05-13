@@ -24,7 +24,12 @@ declare namespace L {
 
 }
 
-declare module "leaflet-heat" {
-    export = L;
-}
+//if we have multiple modules in one file:
+//declare module "leaflet-heat" {
+//    export = L;
+//}
 
+//We could define each module in its own .d.ts file with top-level export declarations, 
+//but it's more convenient to write them as one larger .d.ts file.
+//To do so, we use a construct similar to ambient namespaces, but we use the module keyword and
+// the quoted name of the module which will be available to a later import

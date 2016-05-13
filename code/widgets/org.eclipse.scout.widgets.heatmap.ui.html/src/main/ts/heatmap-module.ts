@@ -7,7 +7,7 @@
 * http://www.eclipse.org/legal/epl-v10.html
 */
 declare var __include: any;
-module scout {
+namespace scout {
     __include("heatmap/HeatmapField.js");
     __include("heatmap/HeatmapFieldLayout.js");
 }

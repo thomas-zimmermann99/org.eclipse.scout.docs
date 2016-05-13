@@ -1,15 +1,15 @@
-module scout {
+namespace scout {
     //    "use strict";
 
     export declare class FormField {
         _renderProperties(): void;
         _remove(): any;
         _send: any;
-        onModelAction(any): any;
-        addContainer(any, string): any;
+        onModelAction(event: any): any;
+        addContainer(p: any, n: string): any;
         addLabel(): void;
         addStatus(): void;
-        addField(any): void;
+        addField(f: any): void;
         invalidateSize(): void;
     };
 
