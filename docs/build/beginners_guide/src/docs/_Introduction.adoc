@@ -34,13 +34,13 @@ image::{imgsdir}/bsi_crm_indigo.png[]
 
 Scout supports a modularization of applications into layers and slices.
 This helps to define a clean architecture for large applications. 
-The layering is driven by the fact the Scout applications have a rending part, a frontend part and a backend part. 
+The layering is driven by the fact that Scout applications have a rendering part, a frontend part and a backend part. 
 The modularization into slices is controlled by different business needs such as front office, back office, reporting or the administraion of application users, roles and permissions.
 
 The goals of the Scout framework can be summarized as follows.
 
 * Boost developer productivity
-* Make the framwork simple to learn
+* Make the framework simple to learn
 * Support building large applications with long life spans 
 
 Boosting developer productivity is of a very high importance and developers should be able to focus on the business value of the application. 
